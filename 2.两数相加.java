@@ -3,6 +3,15 @@
  *
  * [2] 两数相加
  */
+class ListNode {
+    int val;
+    ListNode next;
+
+    public ListNode(int val) {
+        this.val = val;
+    }
+}
+
 class Solution {
     private int getVal(ListNode x) {
         return (x == null) ? 0 : x.val;
@@ -18,7 +27,6 @@ class Solution {
         int cur = 0, nxt = 0;
         do {
             cur = getVal(l1) + getVal(l2) + nxt;
-            // System.out.println(cur%10);
             p.next = new ListNode(cur % 10);
             nxt = cur / 10;
             p = p.next;
